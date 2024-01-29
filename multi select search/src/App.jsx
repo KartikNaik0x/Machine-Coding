@@ -27,7 +27,11 @@ function App() {
   },[search])
 
   const handleSelect = (user) =>{
-    setSelected([...selected,user]);
+    console.log(typeof(user))
+   const updateSelected = [...selected]
+   updateSelected.push(user)
+   setSelected(updateSelected)
+   console.log(selected)
     setSearch("")
     setSuggestions([])
     
