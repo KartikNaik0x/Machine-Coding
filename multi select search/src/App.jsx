@@ -5,6 +5,7 @@ import './App.css'
 function App() {
   const [search , setSearch] = useState("")
   const [suggestions, setSuggestions] = useState([])
+  const [selected, setSelected]= useState([])
 
  
   useEffect(()=>{
@@ -25,6 +26,15 @@ function App() {
     console.log(suggestions)
   },[search])
 
+  const handleSelect = (user) =>{
+    setSelected([...selected,user]);
+    setSearch("")
+    setSuggestions([])
+    
+  }
+
+  console.log(selected)
+
   return (
    
      <div className = "user-search-container">
@@ -39,7 +49,7 @@ function App() {
          />
          <ul className="unordered-list">
             {suggestions?.users?.map((user)=>{
-              return (<li key={user.email}>
+              return (<li key={user.email} onClick={()=>handleSelect(user)}>
                 <img 
                   src={user.image} 
                   alt={`${user.firstName} ${user.lastName}`}

@@ -24,3 +24,28 @@ body {
 .user-input-container input:focus{
   outline: none;
 }
+.unordered-list{
+  max-height: 300px;
+  list-style: none;
+  overflow-y: scroll;
+  padding:0px;
+  margin: 0px;
+  position: absolute;
+  background-color: #fff;
+  border:1px solid #ccc;
+}
+
+.unordered-list li{
+  display: flex;
+  align-items: center;
+  gap:8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.unordered-list img{
+  height: 20px;
+  width: 20px;
+}
+.unordered-list li:hover{
+  background-color: #ccc;
+}
