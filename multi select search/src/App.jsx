@@ -10,7 +10,7 @@ function App() {
   useEffect(()=>{
 
     const getdata = () =>{
-      if(search.trim === " "){
+      if(search.trim === ""){
         return;
       }
      fetch(`https://dummyjson.com/users/search?q=${search}`)
@@ -38,7 +38,7 @@ function App() {
             placeholder="search text"
          />
          <ul className="unordered-list">
-            {suggestions?.user?.map((user)=>{
+            {suggestions?.users?.map((user)=>{
               return (<li key={user.email}>
                 <img 
                   src={user.image} 
